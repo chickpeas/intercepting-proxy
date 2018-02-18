@@ -1,0 +1,39 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`reducers network should handle ADD_REQUEST 1`] = `
+Object {
+  "byHash": Object {
+    "undefined": Object {
+      "requestId": undefined,
+    },
+  },
+  "byId": Array [
+    undefined,
+  ],
+}
+`;
+
+exports[`reducers network should handle ADD_RESPONSE 1`] = `
+Object {
+  "byHash": Object {
+    "undefined": Object {
+      "responseId": undefined,
+    },
+  },
+  "byId": Array [],
+}
+`;
+
+exports[`reducers network should handle initial state 1`] = `
+Object {
+  "byHash": Object {},
+  "byId": Array [],
+}
+`;
+
+exports[`reducers network should handle unknown action type 1`] = `
+Object {
+  "byHash": Object {},
+  "byId": Array [],
+}
+`;

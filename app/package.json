@@ -1,0 +1,17 @@
+{
+  "name": "intercepting-proxy",
+  "productName": "intercepting-proxy",
+  "version": "0.0.1",
+  "description": "Intercepting proxy",
+  "main": "./main.prod.js",
+  "author": {
+    "name": "C. Bollini",
+    "url": "https://github.com/chickpeas"
+  },
+  "scripts": {
+    "electron-rebuild": "node -r babel-register ../internals/scripts/ElectronRebuild.js",
+    "postinstall": "npm run electron-rebuild"
+  },
+  "license": "MIT",
+  "dependencies": {}
+}

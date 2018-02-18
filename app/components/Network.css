@@ -1,0 +1,7 @@
+.networkMain {}
+
+.networkContainer {
+  font-size: 13px;
+  background-color: #fff;
+  display: flex;
+}

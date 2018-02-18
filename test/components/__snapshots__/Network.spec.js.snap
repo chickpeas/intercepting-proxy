@@ -1,0 +1,184 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Network component should render 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <Network
+    changeGlobalFilter={[Function]}
+    network={
+      Object {
+        "byHash": Array [],
+        "byId": Array [],
+      }
+    }
+    onRowClick={[Function]}
+    requests={Object {}}
+    responses={Object {}}
+  />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": Array [
+        <ActionBar
+          filter={undefined}
+          handleClick={[Function]}
+          handleForwardClick={[Function]}
+          pendingRequest={undefined}
+        />,
+        <div
+          className="networkContainer"
+        >
+          <NetworkTable
+            handleClick={[Function]}
+            network={Array []}
+          />
+        </div>,
+      ],
+      "className": "networkMain",
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "filter": undefined,
+          "handleClick": [Function],
+          "handleForwardClick": [Function],
+          "pendingRequest": undefined,
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <NetworkTable
+              handleClick={[Function]}
+              network={Array []}
+            />,
+            null,
+          ],
+          "className": "networkContainer",
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "handleClick": [Function],
+              "network": Array [],
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          null,
+        ],
+        "type": "div",
+      },
+    ],
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <ActionBar
+            filter={undefined}
+            handleClick={[Function]}
+            handleForwardClick={[Function]}
+            pendingRequest={undefined}
+          />,
+          <div
+            className="networkContainer"
+          >
+            <NetworkTable
+              handleClick={[Function]}
+              network={Array []}
+            />
+          </div>,
+        ],
+        "className": "networkMain",
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "filter": undefined,
+            "handleClick": [Function],
+            "handleForwardClick": [Function],
+            "pendingRequest": undefined,
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <NetworkTable
+                handleClick={[Function]}
+                network={Array []}
+              />,
+              null,
+            ],
+            "className": "networkContainer",
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "handleClick": [Function],
+                "network": Array [],
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            null,
+          ],
+          "type": "div",
+        },
+      ],
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;

@@ -1,0 +1,33 @@
+.infoContainer {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  flex-shrink: 1;
+  border-radius: 3px;
+  border: 1px solid #ccc;
+  flex-basis: 30%;
+  position: relative;
+
+  span {
+    display: flex;
+    flex-direction: column;
+    padding-left: 20px;
+  }
+  .requestId {display: none;}
+
+  .label {
+    font-weight: bold;
+  }
+  .value {}
+  .closeIcon {
+    width:15px;
+    height: 15px;
+    position: absolute;
+    top:10px;
+    right:10px;
+    cursor: pointer;
+  }
+  .cookie span{
+    max-width: 200px
+  }
+}
