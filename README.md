@@ -1,3 +1,5 @@
+# WORK IN PROGRESS
+
 # Intercepting Proxy
 
 An intercepting proxy written in Node.js with React + Redux, based on boilerplate from chentsulin/electron-react-boilerplate
