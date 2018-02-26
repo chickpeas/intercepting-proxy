@@ -1,6 +1,6 @@
 import net from 'net';
 import Proxy from 'http-mitm-proxy';
-
+import os from 'os';
 import { createId } from './../utils/index';
 import {
   addRequest,
@@ -11,8 +11,9 @@ import {
   REMOVE_PENDING_REQUEST
 } from './../actions/network';
 
+// customize these:
 const port = 8080;
-
+const sslCaDir = os.tmpdir();
 
 export default function createServer({ dispatch, getState }) {
   const proxy = Proxy();
@@ -35,8 +36,8 @@ export default function createServer({ dispatch, getState }) {
     });
   });
 
-  proxy.listen({ port }, () => {
-    console.log('Proxy server listening on ' + port);
+  proxy.listen({ port, sslCaDir }, (e) => {
+    console.log(`Proxy server listening on ${port} cert folder in ${sslCaDir} error ${e}`);
   });
 
   function proxyCallback() {
