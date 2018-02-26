@@ -1,5 +1,9 @@
 # WORK IN PROGRESS
 
+[![Build Status](https://travis-ci.org/chickpeas/intercepting-proxy.svg?branch=master)](https://travis-ci.org/chickpeas/intercepting-proxy)
+[![Dependency Status](https://david-dm.org/chickpeas/intercepting-proxy.svg)](https://david-dm.org/chickpeas/intercepting-proxy.svg)
+
+
 # Intercepting Proxy
 
 An intercepting proxy written in Node.js with React + Redux, based on boilerplate from chentsulin/electron-react-boilerplate
