@@ -21,10 +21,10 @@ export default function createServer({ dispatch, getState }) {
   // get the tunnel ready
   proxy.onConnect((req, socket) => {
     const host = req.url.split(':')[0];
-    const port = req.url.split(':')[1];
+    const httpsPort = req.url.split(':')[1];
 
     console.log('Tunnel to', req.url);
-    const conn = net.connect(port, host, () => {
+    const conn = net.connect(httpsPort, host, () => {
       socket.write('HTTP/1.1 200 OK\r\n\r\n', 'UTF-8', () => {
         conn.pipe(socket);
         socket.pipe(conn);

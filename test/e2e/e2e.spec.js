@@ -22,7 +22,7 @@ describe('main window', function spec() {
     }
   });
 
-  const findCounter = () => this.app.client.element('[data-tid="counter"]');
+  // const findCounter = () => this.app.client.element('[data-tid="counter"]');
 
   // const findButtons = async () => {
   //   const { value } = await this.app.client.elements('[data-tclass="btn"]');

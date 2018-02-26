@@ -1,5 +1,5 @@
 import uuid from 'uuid';
 
-export function createId() {
+export function createId() { // eslint-disable-line import/prefer-default-export
   return uuid();
 }

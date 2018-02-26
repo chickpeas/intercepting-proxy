@@ -1,11 +1,13 @@
 import { spy } from 'sinon';
 import React from 'react';
 import Enzyme, { shallow } from 'enzyme';
-import { Provider } from 'react-redux';
-import { configureStore } from '../../app/store/configureStore';
 import Adapter from 'enzyme-adapter-react-16';
-import { BrowserRouter as Router } from 'react-router-dom';
-import renderer from 'react-test-renderer';
+
+// import { Provider } from 'react-redux';
+// import renderer from 'react-test-renderer';
+// import { BrowserRouter as Router } from 'react-router-dom';
+
+// import { configureStore } from '../../app/store/configureStore';
 import Network from '../../app/components/Network';
 
 
@@ -30,6 +32,7 @@ function setup() {
     requests: {},
     responses: {}
   };
+  console.log(initialState);
   const component = shallow(<Network {...props} />);
   return {
     component,

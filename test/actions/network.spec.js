@@ -1,10 +1,10 @@
-import configureMockStore from 'redux-mock-store';
-import thunk from 'redux-thunk';
+// import configureMockStore from 'redux-mock-store';
+// import thunk from 'redux-thunk';
 
 import * as actions from '../../app/actions/network';
 
-const middlewares = [thunk];
-const mockStore = configureMockStore(middlewares);
+// const middlewares = [thunk];
+// const mockStore = configureMockStore(middlewares);
 
 
 describe('actions', () => {
@@ -33,13 +33,15 @@ describe('actions', () => {
   });
 
   it('should addPendingRequest should create 2 actions', () => {
-    const fn = actions.addPendingRequest('123',
+    const fn = actions.addPendingRequest(
+      '123',
       {
         requestId: '123',
         headers: {},
         method: 'GET',
         url: 'myurl'
-      });
+      }
+    );
     expect(typeof fn).toBe('function');
     const dispatch = jest.fn();
     const getState = () => ({});
@@ -56,11 +58,11 @@ describe('actions', () => {
         },
         type: actions.ADD_REQUEST
       }], [{
-        type: actions.ADD_PENDING_REQUEST,
-        payload: {
-          id: expect.any(String)
-        }
-      }]]);
+      type: actions.ADD_PENDING_REQUEST,
+      payload: {
+        id: expect.any(String)
+      }
+    }]]);
     // expect(dispatch.mock.calledWith({
     //   type: actions.ADD_PENDING_REQUEST
     // })).toBe(true);

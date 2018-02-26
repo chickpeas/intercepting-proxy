@@ -63,12 +63,11 @@ class Network extends Component<Props> {
     } = this.props;
 
     const { network: { byId, byHash }, responses, requests } = this.props;
-    let statusCode;
     // TODO optimize this:
     const log = byId.map((id, index) => {
       const { requestId, responseId } = byHash[id];
       if (responses[responseId] && responses[responseId].statusCode) {
-        statusCode = responses[responseId].statusCode;
+        const { statusCode } = responses[responseId];
         return {
           index,
           responseId,
@@ -78,8 +77,8 @@ class Network extends Component<Props> {
           statusCode
         };
       }
+      const statusCode = '';
 
-      statusCode = '';
       return {
         index,
         requestId,

@@ -5,7 +5,8 @@
   "description": "Intercepting proxy",
   "main": "./main.prod.js",
   "author": {
-    "name": "C. Bollini",
+    "name": "Bollini",
+    "email": "chickpeas@users.noreply.github.com",
     "url": "https://github.com/chickpeas"
   },
   "scripts": {
