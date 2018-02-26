@@ -48,10 +48,10 @@ export default function createServer({ dispatch, getState }) {
       const id = createId();
       const { clientToProxyRequest: { headers, method, url } } = ctx;
       dispatch(addRequest(id, { headers, method, url }));
-      ctx.onResponseEnd((ctx, callback) => {
-        const { proxyToClientResponse: { statusCode } } = ctx;
+      ctx.onResponseEnd((context, cb) => {
+        const { proxyToClientResponse: { statusCode } } = context;
         dispatch(addResponse(id, { statusCode }));
-        return callback(null);
+        return cb(null);
       });
       return callback();
     });
@@ -64,10 +64,10 @@ export default function createServer({ dispatch, getState }) {
       const { clientToProxyRequest: { headers, method, url } } = ctx;
       dispatch(addPendingRequest(id, { headers, method, url }));
       requestsQueue.push(callback);
-      ctx.onResponseEnd((ctx, callback) => {
-        const { proxyToClientResponse: { statusCode } } = ctx;
+      ctx.onResponseEnd((context, cb) => {
+        const { proxyToClientResponse: { statusCode } } = context;
         dispatch(addResponse(id, { statusCode }));
-        return callback(null);
+        return cb(null);
       });
     });
   }
