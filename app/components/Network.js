@@ -76,7 +76,7 @@ class Network extends Component<Props> {
           url: requests[requestId].url,
           method: requests[requestId].method,
           statusCode
-        }
+        };
       }
 
       statusCode = '';
@@ -86,9 +86,8 @@ class Network extends Component<Props> {
         url: requests[requestId].url,
         method: requests[requestId].method,
         statusCode
-      }
+      };
     });
-
     const Info = (<InfoPanel handleClose={this.handleClosePanel} selected={selected} />);
     return (
       <div className={styles.networkMain}>

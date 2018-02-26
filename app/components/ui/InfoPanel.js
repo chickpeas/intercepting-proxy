@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import styles from './InfoPanel.scss';
-import Close from './../../img/close.svg';
+import Close from './../../img/CloseIcon.svg';
 
 type Props = {
   selected: Object,

@@ -194,7 +194,7 @@ export default merge.smart(baseConfig, {
         use: 'url-loader',
       },
       {
-        test: /\.svg$/,
+        test: /Icon\.svg$/,
         use: 'svg-react-loader',
       }
     ]

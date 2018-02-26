@@ -30,6 +30,7 @@ describe('containers', () => {
   describe('App', () => {
     it('should display initial count', () => {
       const { p } = setup();
+      expect(p.length).toEqual(1);
     });
   });
 });

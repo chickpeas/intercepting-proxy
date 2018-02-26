@@ -40,6 +40,7 @@
       "app.html",
       "main.prod.js",
       "main.prod.js.map",
+      "app/img/",
       "package.json"
     ],
     "dmg": {
@@ -201,6 +202,7 @@
     "react-router": "^4.2.0",
     "react-router-dom": "^4.2.2",
     "react-router-redux": "^5.0.0-alpha.6",
+    "react-svg-loader": "^2.1.0",
     "react-switch": "^2.3.0",
     "react-table": "^6.7.6",
     "redux": "^3.7.2",

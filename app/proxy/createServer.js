@@ -37,7 +37,9 @@ export default function createServer({ dispatch, getState }) {
   });
 
   proxy.listen({ port, sslCaDir }, (e) => {
-    console.log(`Proxy server listening on ${port} cert folder in ${sslCaDir} error ${e}`);
+    if (process.env.NODE_ENV !== 'production') {
+      console.log(`Proxy server listening on ${port} cert folder in ${sslCaDir}, error ${e}`);
+    }
   });
 
   function proxyCallback() {
@@ -73,7 +75,8 @@ export default function createServer({ dispatch, getState }) {
 
   // MIDDLEWARE:
   return (next) => {
-    const { filter: { intercept }, requests } = getState();
+    const { filter: { intercept } } = getState();
+    let cb;
     if (!intercept) proxyCallback();
     else interceptingProxyCallback();
     return (action) => {
@@ -87,13 +90,12 @@ export default function createServer({ dispatch, getState }) {
           next(action);
           return;
         case REMOVE_PENDING_REQUEST:
-          const cb = requestsQueue.shift();
+          cb = requestsQueue.shift();
           cb();
           next(action);
           return;
         default:
           next(action);
-          return;
       }
     };
   };
