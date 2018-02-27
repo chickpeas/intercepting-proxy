@@ -1,11 +1,16 @@
 # WORK IN PROGRESS
 
+[![Build Status](https://travis-ci.org/chickpeas/intercepting-proxy.svg?branch=master)](https://travis-ci.org/chickpeas/intercepting-proxy)
+[![Dependency Status](https://david-dm.org/chickpeas/intercepting-proxy.svg)](https://david-dm.org/chickpeas/intercepting-proxy.svg)
+
+
 # Intercepting Proxy
 
 An intercepting proxy written in Node.js with React + Redux, based on boilerplate from chentsulin/electron-react-boilerplate
 
-The proxy is currently listening on port 8080
-to intercept network call set your browser to use proxy at 120.0.0.1 with port 8080
+The proxy is currently listening on port 8080.
+
+To intercept network calls set your browser to use proxy at 120.0.0.1 with port 8080
  - switch button on intercept all requests, press Forward to pass each the request
  - switch button off pass through and prxy will show all calls and responses without blocking
 
