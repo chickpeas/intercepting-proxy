@@ -196,6 +196,7 @@
     "font-awesome": "^4.7.0",
     "history": "^4.7.2",
     "http-mitm-proxy": "^0.6.0",
+    "material-ui": "^1.0.0-beta.35",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "react-hot-loader": "^4.0.0-beta.13",
