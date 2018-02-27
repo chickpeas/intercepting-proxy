@@ -1,17 +1,36 @@
 // @flow
-import * as React from 'react';
+import React, { Component } from 'react';
+import AppBar from 'material-ui/AppBar';
+import Tabs, { Tab } from 'material-ui/Tabs';
+import { Link } from 'react-router-dom';
 
 type Props = {
   children: React.Node
 };
 
-export default class App extends React.Component<Props> {
+export default class App extends Component<Props> {
   props: Props;
+  state = {
+    value: 0
+  }
+  handleChange = (ev, value) => {
+    this.setState({ value });
+  }
+
 
   render() {
+    const { children } = this.props;
+    const { value } = this.state;
+
     return (
       <div>
-        {this.props.children}
+        <AppBar position="static">
+          <Tabs value={value} onChange={this.handleChange}>
+            <Tab label="Network" component={Link} to="/network" />
+            <Tab label="Setting" component={Link} to="/setting" />
+          </Tabs>
+        </AppBar>
+        {children}
       </div>
     );
   }

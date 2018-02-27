@@ -1,6 +1,10 @@
 // @flow
 import React, { Component } from 'react';
 import Switch from 'react-switch';
+
+import Toolbar from 'material-ui/Toolbar';
+import Button from 'material-ui/Button';
+
 import styles from './ActionBar.scss';
 
 // TODO:
@@ -21,7 +25,7 @@ export default class ActionBar extends Component<Props> {
     const disabled = !(filter.intercept && pendingRequest.length !== 0);
 
     return (
-      <div className={styles.barContainer}>
+      <Toolbar className={styles.barContainer}>
         <label className={styles.labelBox} htmlFor="intercept-switch">
           <div className={styles.center}>Intercept</div>
           <Switch
@@ -32,14 +36,15 @@ export default class ActionBar extends Component<Props> {
           }
           />
         </label>
-        <button
+        <Button
+          variant="raised"
           className={styles.forward}
           onClick={this.props.handleForwardClick}
           disabled={disabled}
         >
             Forward
-        </button>
-      </div>
+        </Button>
+      </Toolbar>
     );
   }
 }
