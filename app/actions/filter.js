@@ -2,7 +2,7 @@
 
 export const ENABLE_FILTER = 'ENABLE_FILTER';
 export const ENABLE_MIME_FILTER = 'ENABLE_MIME_FILTER';
-export const ENABLE_STATUS_FILTER = 'ENABLE_STATUS_FILTER';
+export const ENABLE_STATUSCODE_FILTER = 'ENABLE_STATUSCODE_FILTER';
 export const FORWARD_REQUEST = 'FORWARD_REQUEST';
 
 export function changeInterceptFilter(value: boolean) {
@@ -23,9 +23,10 @@ export function changeMimeFilter(value: Object) {
   };
 }
 
-export function changeStatusFilter(value: Object) {
+export function changeStatusCodeFilter(value: Object) {
+  console.log(value);
   return {
-    type: ENABLE_STATUS_FILTER,
+    type: ENABLE_STATUSCODE_FILTER,
     payload: {
       value
     }

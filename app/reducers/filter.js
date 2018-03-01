@@ -1,5 +1,5 @@
 // @flow
-import { ENABLE_FILTER, ENABLE_MIME_FILTER, ENABLE_STATUS_FILTER } from '../actions/filter';
+import { ENABLE_FILTER, ENABLE_MIME_FILTER, ENABLE_STATUSCODE_FILTER } from '../actions/filter';
 
 export type filterStateType = {
   intercept: boolean,
@@ -16,8 +16,19 @@ type actionType = {
 const initialState = {
   intercept: true,
   mime: {
-    css: false,
-    html: false
+    css: true,
+    script: true,
+    html: true,
+    xml: true,
+    image: true,
+    flash: true,
+    binary: true
+  },
+  statusCode: {
+    success: true,
+    redirect: true,
+    requestErr: true,
+    serverErr: true
   }
 };
 
@@ -32,14 +43,17 @@ export default function filter(state: Object = initialState, action: actionType)
       return {
         ...state,
         mime: {
-          [action.payload.value]: true
+          ...state.mime,
+          ...action.payload.value
         }
       };
-    case ENABLE_STATUS_FILTER:
+    case ENABLE_STATUSCODE_FILTER:
+      console.log(action.payload.value);
       return {
         ...state,
-        status: {
-          [action.payload.value]: true
+        statusCode: {
+          ...state.statusCode,
+          ...action.payload
         }
       };
     default:

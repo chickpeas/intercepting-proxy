@@ -1,3 +1,4 @@
+// @flow
 import { connect } from 'react-redux';
 import Network from '../components/Network';
 import * as FilterActions from '../actions/filter';

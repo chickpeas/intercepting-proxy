@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import AppBar from 'material-ui/AppBar';
 import Tabs, { Tab } from 'material-ui/Tabs';
 import { Link } from 'react-router-dom';
+import styles from './App.scss';
 
 type Props = {
   children: React.Node
@@ -21,7 +22,6 @@ export default class App extends Component<Props> {
   render() {
     const { children } = this.props;
     const { value } = this.state;
-
     return (
       <div>
         <AppBar position="static">
@@ -30,7 +30,9 @@ export default class App extends Component<Props> {
             <Tab label="Setting" component={Link} to="/setting" />
           </Tabs>
         </AppBar>
-        {children}
+        <div className={styles.panes}>
+          {children}
+        </div>
       </div>
     );
   }

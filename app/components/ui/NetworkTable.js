@@ -8,6 +8,7 @@ type Props = {
   handleClick: () => void,
   network: Array
 };
+// TODO move to container
 const columns = [{
   Header: '#',
   accessor: 'index',

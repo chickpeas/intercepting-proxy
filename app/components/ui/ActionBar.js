@@ -38,6 +38,7 @@ export default class ActionBar extends Component<Props> {
         </label>
         <Button
           variant="raised"
+          color="primary"
           className={styles.forward}
           onClick={this.props.handleForwardClick}
           disabled={disabled}
