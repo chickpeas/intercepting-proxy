@@ -6,7 +6,7 @@
 
 # Intercepting Proxy
 
-An intercepting proxy written in Node.js with React + Redux, based on boilerplate from chentsulin/electron-react-boilerplate
+An intercepting proxy written in Node.js with React + Redux, based on boilerplate from https://github.com/chentsulin/electron-react-boilerplate/
 
 The proxy is currently listening on port 8080.
 
