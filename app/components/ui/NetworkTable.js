@@ -6,31 +6,16 @@ import styles from './NetworkTable.scss';
 
 type Props = {
   handleClick: () => void,
-  network: Array
+  network: Array,
+  columns: Array
 };
 // TODO move to container
-const columns = [{
-  Header: '#',
-  accessor: 'index',
-  width: 40,
-  filterable: false
-}, {
-  Header: 'method',
-  accessor: 'method',
-  width: 80
-}, {
-  Header: 'statusCode',
-  accessor: 'statusCode',
-  width: 80
-}, {
-  Header: 'url',
-  accessor: 'url'
-}];
 
 class NetworkTable extends Component<Props> {
   render() {
     const {
-      network
+      network,
+      columns
     } = this.props;
 
     return (

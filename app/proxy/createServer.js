@@ -62,57 +62,36 @@ export default function createServer({ dispatch, getState }) {
   }
 
   function proxyCallback() {
-    console.log(proxy.onRequestHandlers, proxy.onRequestHandlers);
     proxy.onRequestHandlers.shift();
     const requestCallbackId = createId();
     pushRequestCallback(requestCallbackId);
     proxy.onRequest((ctx, callback) => {
-      console.log('first log me', ctx.proxyToServerRequestOptions, ctx.proxyToServerRequestOptions.headers);
       const id = createId();
       const { clientToProxyRequest: { headers, method, url } } = ctx;
       dispatch(addRequest(id, { headers, method, url }));
       ctx.onResponseEnd((context, cb) => {
-        const { proxyToClientResponse: { statusCode } } = context;
-        dispatch(addResponse(id, { statusCode }));
+        // .serverToProxyResponse.headers["content-type"]
+        const { proxyToClientResponse: { statusCode }, serverToProxyResponse: { headers } } = context;
+        dispatch(addResponse(id, { statusCode, headers }));
         return cb(null);
       });
       return callback();
     });
   }
 
-  function filterCallback() {
-    console.log(proxy.onRequestHandlers, proxy.onRequestHandlers);
-    proxy.onRequestHandlers.shift();
-    const requestCallbackId = createId();
-    pushRequestCallback(requestCallbackId);
-    proxy.onRequest((ctx, callback) => {
-      console.log('first log me', ctx.proxyToServerRequestOptions, ctx.proxyToServerRequestOptions.headers);
-      const id = createId();
-      const { clientToProxyRequest: { headers, method, url } } = ctx;
-      dispatch(addRequest(id, { headers, method, url }));
-      ctx.onResponseEnd((context, cb) => {
-        const { proxyToClientResponse: { statusCode } } = context;
-        dispatch(addResponse(id, { statusCode }));
-        return cb(null);
-      });
-      return callback();
-    });
-  }
   function interceptingProxyCallback() {
-    console.log(proxy.onRequestHandlers);
     proxy.onRequestHandlers.shift();
     const requestCallbackId = createId();
     pushRequestCallback(requestCallbackId);
     proxy.onRequest((ctx, callback) => {
       const id = createId();
-      console.log('second log me', ctx.proxyToServerRequestOptions, ctx.proxyToServerRequestOptions.headers);
       const { clientToProxyRequest: { headers, method, url } } = ctx;
       dispatch(addPendingRequest(id, { headers, method, url }));
       proxy.requestsQueue.push(callback);
       callbackHash.cb[id] = proxy.requestsQueue.length - 1;
       ctx.onResponseEnd((context, cb) => {
         const { proxyToClientResponse: { statusCode } } = context;
-        dispatch(addResponse(id, { statusCode }));
+        dispatch(addResponse(id, { statusCode, mime: 'empty' }));
         return cb(null);
       });
     });

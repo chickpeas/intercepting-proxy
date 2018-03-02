@@ -18,7 +18,8 @@ type Props = {
   network: Object,
   requests: Object,
   responses: Object,
-  filter: Object
+  filter: Object,
+  columns: Array
 };
 
 class Network extends Component<Props> {
@@ -63,7 +64,8 @@ class Network extends Component<Props> {
     } = this.state;
     const {
       filter,
-      requests: { pendingRequest }
+      requests: { pendingRequest },
+      columns
     } = this.props;
 
     const { network: { byId, byHash }, responses, requests } = this.props;
@@ -71,14 +73,15 @@ class Network extends Component<Props> {
     const log = byId.map((id, index) => {
       const { requestId, responseId } = byHash[id];
       if (responses[responseId] && responses[responseId].statusCode) {
-        const { statusCode } = responses[responseId];
+        const { statusCode, mime } = responses[responseId];
         return {
           index,
           responseId,
           requestId,
           url: requests[requestId].url,
           method: requests[requestId].method,
-          statusCode
+          statusCode,
+          mime
         };
       }
       const statusCode = '';
@@ -102,7 +105,7 @@ class Network extends Component<Props> {
           pendingRequest={pendingRequest}
         />
         <div className={styles.networkContainer}>
-          <NetworkTable network={log} handleClick={this.handlePanelClick} />
+          <NetworkTable columns={columns} network={log} handleClick={this.handlePanelClick} />
           { sidePanel ? Info : null }
         </div>
       </div>

@@ -13,11 +13,9 @@ export default class Setting extends Component<Props> {
   props: Props;
 
   handleMimeChange = (name, event, checked) => {
-    console.log(name, event);
     this.props.changeMimeFilter({ [name]: checked });
   };
   handleStatusCodeChange = (name, event, checked) => {
-    console.log('there', name, event, checked);
     this.props.changeStatusCodeFilter({ [name]: checked });
   };
 

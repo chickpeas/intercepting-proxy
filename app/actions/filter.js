@@ -24,7 +24,6 @@ export function changeMimeFilter(value: Object) {
 }
 
 export function changeStatusCodeFilter(value: Object) {
-  console.log(value);
   return {
     type: ENABLE_STATUSCODE_FILTER,
     payload: {

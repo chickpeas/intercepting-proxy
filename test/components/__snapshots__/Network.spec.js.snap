@@ -40,6 +40,7 @@ ShallowWrapper {
           className="networkContainer"
         >
           <NetworkTable
+            columns={undefined}
             handleClick={[Function]}
             network={Array []}
           />
@@ -71,6 +72,7 @@ ShallowWrapper {
         "props": Object {
           "children": Array [
             <NetworkTable
+              columns={undefined}
               handleClick={[Function]}
               network={Array []}
             />,
@@ -85,6 +87,7 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "class",
             "props": Object {
+              "columns": undefined,
               "handleClick": [Function],
               "network": Array [],
             },
@@ -117,6 +120,7 @@ ShallowWrapper {
             className="networkContainer"
           >
             <NetworkTable
+              columns={undefined}
               handleClick={[Function]}
               network={Array []}
             />
@@ -148,6 +152,7 @@ ShallowWrapper {
           "props": Object {
             "children": Array [
               <NetworkTable
+                columns={undefined}
                 handleClick={[Function]}
                 network={Array []}
               />,
@@ -162,6 +167,7 @@ ShallowWrapper {
               "key": undefined,
               "nodeType": "class",
               "props": Object {
+                "columns": undefined,
                 "handleClick": [Function],
                 "network": Array [],
               },

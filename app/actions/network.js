@@ -48,13 +48,15 @@ export function dropRequest() {
   };
 }
 
-export function addResponse(id, res) {
+export function addResponse(id, { statusCode, headers }) {
+  const mime = headers['content-type'];
   return {
     type: ADD_RESPONSE,
     payload: {
       id,
       responseId: createId(),
-      statusCode: res.statusCode
+      statusCode,
+      mime
     }
   };
 }

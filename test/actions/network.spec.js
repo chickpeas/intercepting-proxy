@@ -22,7 +22,7 @@ describe('actions', () => {
   });
 
   it('should addResponse should create action', () => {
-    expect(actions.addResponse('123', { statusCode: 200 })).toEqual({
+    expect(actions.addResponse('123', { statusCode: 200, headers: {} })).toEqual({
       payload: {
         id: '123',
         responseId: expect.any(String),
