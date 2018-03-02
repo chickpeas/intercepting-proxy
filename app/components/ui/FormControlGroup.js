@@ -35,8 +35,9 @@ export default class FormControlGroup extends Component<Props> {
         checks,
       }
     } = this.props;
-    const checkList = checks.map(({ value, checked, label: checklabel }) =>
+    const checkList = checks.map(({ value, checked, label: checklabel }, i) =>
       (<FormControlLabel
+        key={i}
         control={
           <Checkbox
             checked={(typeof this.state[value] === 'undefined') ? checked : this.state[value]}

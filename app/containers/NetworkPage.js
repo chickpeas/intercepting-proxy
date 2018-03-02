@@ -13,7 +13,8 @@ const mapStateToProps = (state) => ({
 
 const mapDispatchToProps = (dispatch) => ({
   changeInterceptFilter: (value) => { dispatch(FilterActions.changeInterceptFilter(value)); },
-  forwardRequest: () => { dispatch(NetworkActions.forwardRequest()); }
+  forwardRequest: () => { dispatch(NetworkActions.forwardRequest()); },
+  dropRequest: () => { dispatch(NetworkActions.dropRequest()); }
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Network);

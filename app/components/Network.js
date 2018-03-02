@@ -14,6 +14,7 @@ import styles from './Network.css';
 type Props = {
   changeInterceptFilter: (boolean) => void,
   forwardRequest: () => void,
+  dropRequest: () => void,
   network: Object,
   requests: Object,
   responses: Object,
@@ -36,6 +37,9 @@ class Network extends Component<Props> {
   }
   handleForwardClick = () => {
     this.props.forwardRequest();
+  }
+  handleDropClick = () => {
+    this.props.dropRequest();
   }
   handlePanelClick = ({ original: { requestId, responseId } }) => {
     const { requests, responses } = this.props;
@@ -94,6 +98,7 @@ class Network extends Component<Props> {
           filter={filter}
           handleClick={this.handleInterceptClick}
           handleForwardClick={this.handleForwardClick}
+          handleDropClick={this.handleDropClick}
           pendingRequest={pendingRequest}
         />
         <div className={styles.networkContainer}>

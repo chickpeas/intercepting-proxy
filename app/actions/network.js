@@ -3,7 +3,8 @@ import { createId } from './../utils/index';
 
 export const ADD_REQUEST = 'ADD_REQUEST';
 export const ADD_PENDING_REQUEST = 'ADD_PENDING_REQUEST';
-export const REMOVE_PENDING_REQUEST = 'REMOVE_PENDING_REQUEST';
+export const FORWARD_PENDING_REQUEST = 'FORWARD_PENDING_REQUEST';
+export const DROP_PENDING_REQUEST = 'DROP_PENDING_REQUEST';
 export const ADD_RESPONSE = 'ADD_RESPONSE';
 export const ENABLE_FILTER = 'ENABLE_FILTER';
 
@@ -34,7 +35,15 @@ export function addPendingRequest(id, req) {
 export function forwardRequest() {
   return (dispatch) => {
     dispatch({
-      type: REMOVE_PENDING_REQUEST
+      type: FORWARD_PENDING_REQUEST
+    });
+  };
+}
+
+export function dropRequest() {
+  return (dispatch) => {
+    dispatch({
+      type: DROP_PENDING_REQUEST
     });
   };
 }

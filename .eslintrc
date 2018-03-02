@@ -28,9 +28,10 @@
     "react/sort-comp": ["error", {
       "order": ["type-annotations", "static-methods", "lifecycle", "everything-else", "render"]
     }],
-    "react/jsx-no-bind": "off",
+    "react/jsx-no-bind": "warn",
     "react/jsx-filename-extension": ["error", { "extensions": [".js", ".jsx"] }],
-    "react/prefer-stateless-function": "off"
+    "react/prefer-stateless-function": "warn",
+    "react/no-array-index-key": "warn"
   },
   "plugins": [
     "flowtype",

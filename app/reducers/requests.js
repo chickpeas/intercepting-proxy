@@ -1,5 +1,5 @@
 // @flow
-import { ADD_REQUEST, ADD_PENDING_REQUEST, REMOVE_PENDING_REQUEST } from '../actions/network';
+import { ADD_REQUEST, ADD_PENDING_REQUEST, FORWARD_PENDING_REQUEST, DROP_PENDING_REQUEST } from '../actions/network';
 
 export type requestStateType = {
   requests: Object<{
@@ -36,7 +36,8 @@ export default function requests(state: Object = initialState, action: actionTyp
           ...state.pendingRequest,
           action.payload.id]
       };
-    case REMOVE_PENDING_REQUEST:
+    case FORWARD_PENDING_REQUEST:
+    case DROP_PENDING_REQUEST:
       return {
         ...state,
         pendingRequest: [

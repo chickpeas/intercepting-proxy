@@ -13,6 +13,7 @@ import styles from './ActionBar.scss';
 type Props = {
   handleClick: (boolean) => void,
   handleForwardClick: (boolean) => void,
+  handleDropClick: (boolean) => void,
   pendingRequest: Array,
   filter: Object
 };
@@ -23,7 +24,6 @@ export default class ActionBar extends Component<Props> {
   render() {
     const { filter, pendingRequest } = this.props;
     const disabled = !(filter.intercept && pendingRequest.length !== 0);
-
     return (
       <Toolbar className={styles.barContainer}>
         <label className={styles.labelBox} htmlFor="intercept-switch">
@@ -44,6 +44,15 @@ export default class ActionBar extends Component<Props> {
           disabled={disabled}
         >
             Forward
+        </Button>
+        <Button
+          variant="raised"
+          color="secondary"
+          className={styles.forward}
+          onClick={this.props.handleDropClick}
+          disabled={disabled}
+        >
+            Drop
         </Button>
       </Toolbar>
     );
