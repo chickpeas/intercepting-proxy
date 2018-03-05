@@ -1,6 +1,13 @@
 import React, { Component } from 'react';
+import ExpansionPanel, {
+  ExpansionPanelSummary,
+  ExpansionPanelDetails,
+} from 'material-ui/ExpansionPanel';
+import Typography from 'material-ui/Typography';
+import IconButton from 'material-ui/IconButton';
+import ExpandMoreIcon from 'material-ui-icons/ExpandMore';
+import CloseIcon from 'material-ui-icons/Close';
 import styles from './InfoPanel.scss';
-import Close from './../../img/CloseIcon.svg';
 
 type Props = {
   selected: Object,
@@ -10,6 +17,10 @@ type Props = {
 
 class InfoPanel extends Component<Props> {
   props: Props;
+
+  endEditing = (value) => {
+    console.log('send value to the state', value);
+  }
 
   nestedRender(obj) {
     const keys = Object.keys(obj);
@@ -32,13 +43,31 @@ class InfoPanel extends Component<Props> {
   }
 
   render() {
-    const { selected, handleClose } = this.props;
-    const value = this.nestedRender(selected);
+    const { selected: { request, response = {} }, handleClose } = this.props;
+    const requestComponent = this.nestedRender(request);
+    const responseComponent = this.nestedRender(response);
 
     return (
       <div className={styles.infoContainer}>
-        <Close className={styles.closeIcon} onClick={handleClose} />
-        { value }
+        <IconButton aria-label="close panel" onClick={handleClose}>
+          <CloseIcon />
+        </IconButton>
+        <ExpansionPanel>
+          <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
+            <Typography variant="subheading">Request</Typography>
+          </ExpansionPanelSummary>
+          <ExpansionPanelDetails>
+            { requestComponent }
+          </ExpansionPanelDetails>
+        </ExpansionPanel>
+        <ExpansionPanel>
+          <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
+            <Typography variant="subheading">Response</Typography>
+          </ExpansionPanelSummary>
+          <ExpansionPanelDetails>
+            { responseComponent }
+          </ExpansionPanelDetails>
+        </ExpansionPanel>
       </div>
     );
   }

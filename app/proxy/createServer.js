@@ -6,6 +6,7 @@ import {
   addRequest,
   addPendingRequest,
   addResponse,
+  addRequestBody,
   ENABLE_FILTER,
   ADD_PENDING_REQUEST,
   FORWARD_PENDING_REQUEST,
@@ -82,18 +83,39 @@ export default function createServer({ dispatch, getState }) {
   }
 
   function interceptingProxyCallback() {
+    const responseChunks = [];
+    const requestChunks = [];
     proxy.onRequestHandlers.shift();
     const requestCallbackId = createId();
     pushRequestCallback(requestCallbackId);
+
     proxy.onRequest((ctx, callback) => {
       const id = createId();
       const { clientToProxyRequest: { headers, method, url } } = ctx;
       dispatch(addPendingRequest(id, { headers, method, url }));
       proxy.requestsQueue.push(callback);
       callbackHash.cb[id] = proxy.requestsQueue.length - 1;
+      ctx.onRequestData((context, chunk, cb) => {
+        requestChunks.push(chunk);
+        return cb(null, chunk);
+      });
+      ctx.onRequestEnd((context, cb) => {
+        const body = Buffer.concat(requestChunks);
+        dispatch(addRequestBody(id, body));
+        return cb();
+      });
+      ctx.onResponseData((context, chunk, cb) => {
+        responseChunks.push(chunk);
+        return cb(null, chunk);
+      });
       ctx.onResponseEnd((context, cb) => {
-        const { proxyToClientResponse: { statusCode } } = context;
-        dispatch(addResponse(id, { statusCode, mime: 'empty' }));
+        const {
+          proxyToClientResponse: { statusCode },
+          serverToProxyResponse: { headers }
+        } = context;
+        const body = Buffer.concat(responseChunks);
+        ctx.proxyToClientResponse.write(body);
+        dispatch(addResponse(id, { statusCode, headers, body }));
         return cb(null);
       });
     });

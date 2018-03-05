@@ -23,7 +23,8 @@ export default function responses(state: Object = initialState, action: actionTy
         ...state,
         [action.payload.responseId]: {
           statusCode: action.payload.statusCode,
-          mime: action.payload.mime
+          mime: action.payload.mime,
+          body: action.payload.body
         }
       };
     default:

@@ -1,5 +1,5 @@
 // @flow
-import { ADD_REQUEST, ADD_PENDING_REQUEST, FORWARD_PENDING_REQUEST, DROP_PENDING_REQUEST } from '../actions/network';
+import { ADD_REQUEST, ADD_REQUEST_BODY, ADD_PENDING_REQUEST, FORWARD_PENDING_REQUEST, DROP_PENDING_REQUEST } from '../actions/network';
 
 export type requestStateType = {
   requests: Object<{
@@ -26,7 +26,16 @@ export default function requests(state: Object = initialState, action: actionTyp
         [action.payload.requestId]: {
           headers: action.payload.headers,
           method: action.payload.method,
-          url: action.payload.url
+          url: action.payload.url,
+          body: action.payload.body
+        }
+      };
+    case ADD_REQUEST_BODY:
+      return {
+        ...state,
+        [action.payload.requestId]: {
+          ...state[action.payload.requestId],
+          body: action.payload.body
         }
       };
     case ADD_PENDING_REQUEST:
