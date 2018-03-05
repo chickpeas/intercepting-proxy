@@ -57,9 +57,6 @@ export default function createServer({ dispatch, getState }) {
   function pushRequestCallback(requestCallbackId) {
     callbackHash.request[requestCallbackId] = proxy.onRequestHandlers.length - 1;
   }
-  function removeRequestCallback(requestCallbackId) {
-    delete callbackHash.request[requestCallbackId];
-  }
 
   function proxyCallback() {
     proxy.onRequestHandlers.shift();
@@ -71,8 +68,13 @@ export default function createServer({ dispatch, getState }) {
       dispatch(addRequest(id, { headers, method, url }));
       ctx.onResponseEnd((context, cb) => {
         // .serverToProxyResponse.headers["content-type"]
-        const { proxyToClientResponse: { statusCode }, serverToProxyResponse: { headers } } = context;
-        dispatch(addResponse(id, { statusCode, headers }));
+        const {
+          proxyToClientResponse:
+            { statusCode },
+          serverToProxyResponse:
+            { headers: responseHeaders }
+        } = context;
+        dispatch(addResponse(id, { statusCode, headers: responseHeaders }));
         return cb(null);
       });
       return callback();

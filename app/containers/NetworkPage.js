@@ -43,7 +43,7 @@ const mapDispatchToProps = (dispatch) => ({
 class NetworkPage extends Component {
   render() {
     return (<Network columns={columns} {...this.props} />);
-  };
+  }
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(NetworkPage);
