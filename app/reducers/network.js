@@ -58,3 +58,16 @@ export default function network(state: Object = initialState, action: actionType
       return state;
   }
 }
+
+
+export const getResponseIdById = ({ network: { byHash } }, id) => (byHash[id].requestId);
+
+export const getResponseById = ({ network: { byId }, responses }, id) => (
+  responses[byId[id].requestId]
+);
+
+export const getRequestIdById = ({ network: { byId } }, id) => (byId[id].requestId);
+
+export const getRequestById = ({ network: { byId }, requests }, id) => (
+  requests[byId[id].requestId]
+);
