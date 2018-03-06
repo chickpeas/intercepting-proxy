@@ -18,12 +18,10 @@ type Props = {
 class InfoPanel extends Component<Props> {
   props: Props;
 
-  endEditing = (value) => {
-    console.log('send value to the state', value);
-  }
-
   nestedRender(obj) {
-    const keys = Object.keys(obj);
+    const renderObject = obj;
+    delete renderObject.body; // ops
+    const keys = Object.keys(renderObject);
     const flatten = keys.map((key) => {
       if (typeof obj[key] === 'object') {
         const flattenInner = this.nestedRender(obj[key]);

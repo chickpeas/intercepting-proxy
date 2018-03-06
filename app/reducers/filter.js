@@ -48,7 +48,6 @@ export default function filter(state: Object = initialState, action: actionType)
         }
       };
     case ENABLE_STATUSCODE_FILTER:
-      console.log(action.payload.value);
       return {
         ...state,
         statusCode: {

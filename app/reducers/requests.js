@@ -30,14 +30,14 @@ export default function requests(state: Object = initialState, action: actionTyp
           body: action.payload.body
         }
       };
-    case ADD_REQUEST_BODY:
-      return {
-        ...state,
-        [action.payload.requestId]: {
-          ...state[action.payload.requestId],
-          body: action.payload.body
-        }
-      };
+    // case ADD_REQUEST_BODY: Immutable!!!
+    //   return {
+    //     ...state,
+    //     [action.payload.requestId]: {
+    //       ...state[action.payload.requestId],
+    //       body: action.payload.body
+    //     }
+    //   };
     case ADD_PENDING_REQUEST:
       return {
         ...state,

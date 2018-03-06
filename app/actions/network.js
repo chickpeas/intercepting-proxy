@@ -10,7 +10,12 @@ export const DROP_PENDING_REQUEST = 'DROP_PENDING_REQUEST';
 export const ADD_RESPONSE = 'ADD_RESPONSE';
 export const ENABLE_FILTER = 'ENABLE_FILTER';
 
-export function addRequest(id, { method, url, headers, body = {} }) {
+export function addRequest(id, {
+  method,
+  url,
+  headers,
+  body = {}
+}) {
   return {
     type: ADD_REQUEST,
     payload: {

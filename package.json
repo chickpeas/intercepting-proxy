@@ -208,7 +208,7 @@
     "react-router-redux": "^5.0.0-alpha.6",
     "react-svg-loader": "^2.1.0",
     "react-switch": "^2.3.0",
-    "react-table": "^6.7.6",
+    "react-virtualized": "^9.18.5",
     "redux": "^3.7.2",
     "redux-mock-store": "^1.5.1",
     "redux-thunk": "^2.2.0",

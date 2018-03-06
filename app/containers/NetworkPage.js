@@ -6,23 +6,23 @@ import * as FilterActions from '../actions/filter';
 import * as NetworkActions from '../actions/network';
 
 const columns = [{
-  Header: '#',
+  header: '#',
   accessor: 'index',
-  width: 40,
-  filterable: false
+  width: 40
 }, {
-  Header: 'method',
+  header: 'method',
   accessor: 'method',
   width: 80
 }, {
-  Header: 'statusCode',
+  header: 'statusCode',
   accessor: 'statusCode',
   width: 80
 }, {
-  Header: 'url',
-  accessor: 'url'
+  header: 'url',
+  accessor: 'url',
+  width: 160
 }, {
-  Header: 'mime',
+  header: 'mime',
   accessor: 'mime',
   width: 80
 }];

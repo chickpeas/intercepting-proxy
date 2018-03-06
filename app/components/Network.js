@@ -42,7 +42,7 @@ class Network extends Component<Props> {
   handleDropClick = () => {
     this.props.dropRequest();
   }
-  handlePanelClick = ({ original: { requestId, responseId } }) => {
+  handlePanelClick = ({ requestId, responseId }) => {
     const { requests, responses } = this.props;
     this.setState({
       sidePanel: true,
