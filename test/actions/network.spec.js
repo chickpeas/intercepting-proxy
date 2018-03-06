@@ -15,7 +15,8 @@ describe('actions', () => {
         id: '123',
         headers: {},
         method: 'GET',
-        url: 'myurl'
+        url: 'myurl',
+        body: {}
       },
       type: actions.ADD_REQUEST
     });
@@ -54,7 +55,8 @@ describe('actions', () => {
           id: '123',
           headers: {},
           method: 'GET',
-          url: 'myurl'
+          url: 'myurl',
+          body: {}
         },
         type: actions.ADD_REQUEST
       }], [{

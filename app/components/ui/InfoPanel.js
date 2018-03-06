@@ -19,9 +19,7 @@ class InfoPanel extends Component<Props> {
   props: Props;
 
   nestedRender(obj) {
-    const renderObject = obj;
-    delete renderObject.body; // ops
-    const keys = Object.keys(renderObject);
+    const keys = Object.keys(obj);
     const flatten = keys.map((key) => {
       if (typeof obj[key] === 'object') {
         const flattenInner = this.nestedRender(obj[key]);
