@@ -101,6 +101,7 @@ export default function createServer({ dispatch, getState }) {
       });
       ctx.onRequestEnd((context, cb) => {
         const body = Buffer.concat(requestChunks);
+        console.log('requestBody', body);
         dispatch(addRequestBody(id, body));
         return cb();
       });
@@ -114,6 +115,7 @@ export default function createServer({ dispatch, getState }) {
           serverToProxyResponse: { headers }
         } = context;
         const body = Buffer.concat(responseChunks);
+        console.log('responseBody', body);
         ctx.proxyToClientResponse.write(body);
         dispatch(addResponse(id, { statusCode, headers, body }));
         return cb(null);

@@ -1,4 +1,5 @@
 // @flow
+import { Map, List } from 'immutable';
 import { ADD_RESPONSE } from '../actions/network';
 
 export type responseStateType = {
@@ -15,6 +16,8 @@ type actionType = {
 };
 
 const initialState = {};
+// const initialState = Map();
+
 
 export default function responses(state: Object = initialState, action: actionType) {
   switch (action.type) {
