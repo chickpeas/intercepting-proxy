@@ -30,16 +30,16 @@ class NetworkTable extends Component<Props> {
       network,
       columns
     } = this.props;
-    const columnList = columns.map(({ header, accessor, width }) => {
-      return (<Column
-        label={header}
-        dataKey={accessor}
-        width={width}
-      />);
-    });
+    const columnList = columns.map(({ header, accessor, width }) => (<Column
+      key={accessor}
+      label={header}
+      dataKey={accessor}
+      width={width}
+    />));
 
     return (
       <Table
+        className={styles.table}
         width={400}
         height={500}
         headerHeight={50}

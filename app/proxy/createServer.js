@@ -90,6 +90,7 @@ export default function createServer({ dispatch, getState }) {
     pushRequestCallback(requestCallbackId);
 
     proxy.onRequest((ctx, callback) => {
+      ctx.use(Proxy.gunzip);
       const id = createId();
       const { clientToProxyRequest: { headers, method, url } } = ctx;
       dispatch(addPendingRequest(id, { headers, method, url }));

@@ -21,6 +21,15 @@ class InfoPanel extends Component<Props> {
   nestedRender(obj) {
     const keys = Object.keys(obj);
     const flatten = keys.map((key) => {
+      if (Buffer.isBuffer(obj[key])) {
+        const BodyToString = obj[key].toString();
+        // I am breaking recursion, inside body there is no other object
+        return (
+          <span key={key} className={styles[key] ? styles[key] : key}>
+            <span className={styles.label}>{key}</span>
+            {BodyToString}
+          </span>);
+      }
       if (typeof obj[key] === 'object') {
         const flattenInner = this.nestedRender(obj[key]);
         return (

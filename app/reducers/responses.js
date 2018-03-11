@@ -34,3 +34,17 @@ export default function responses(state: Object = initialState, action: actionTy
       return state;
   }
 }
+
+export const getBodyByResponseId = (
+  {
+    responses: response
+  },
+  responseId
+) => (response[responseId].body);
+
+export const getBodyByResponseIdAsString = (
+  {
+    responses: response
+  },
+  responseId
+) => (response[responseId].body.toString());

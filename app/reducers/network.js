@@ -17,36 +17,34 @@ type actionType = {
   payload?: Object
 };
 
-const initialState = fromJS({
+const initialState = {
   byId: [],
   byHash: {}
-});
+};
 
 export default function network(state: Object = initialState, action: actionType) {
-  console.log(state);
   switch (action.type) {
     case ADD_REQUEST:
-      return state.set('byId', );
-      // return {
-      //   ...state,
-      //   byId: [
-      //     ...state.byId,
-      //     action.payload.id
-      //   ],
-      //   byHash: {
-      //     ...state.byHash,
-      //     [action.payload.id]: {
-      //       ...state[action.payload.id],
-      //       requestId: action.payload.requestId
-      //     }
-      //   }
-      // };
+      return {
+        ...state,
+        byId: [
+          ...state.byId,
+          action.payload.id
+        ],
+        byHash: {
+          ...state.byHash,
+          [action.payload.id]: {
+            ...state[action.payload.id],
+            requestId: action.payload.requestId
+          }
+        }
+      };
     case ADD_RESPONSE:
       return {
-        // byId: [
-        //   ...state.byId,
-        //   action.payload.id
-        // ],
+        byId: [
+          ...state.byId,
+          action.payload.id
+        ],
         ...state,
         byHash: {
           ...state.byHash,
