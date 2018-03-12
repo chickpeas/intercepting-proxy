@@ -2,23 +2,24 @@ import React from 'react';
 import Enzyme, { shallow } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
 
-import InfoPanel from '../../app/components/ui/InfoPanel';
+import ActionBar from '../../app/components/ui/ActionBar';
 
 Enzyme.configure({ adapter: new Adapter() });
 
 function setup() {
   const props = {
-    selected: {}
+    filter: {},
+    pendingRequest: {}
   };
 
-  const component = shallow(<InfoPanel {...props} />);
+  const component = shallow(<ActionBar {...props} />);
   return {
     component,
     props
   };
 }
 
-describe('InfoPanel component', () => {
+describe('ActionBar component', () => {
   it('should render', () => {
     const { component } = setup();
     expect(component).toMatchSnapshot();

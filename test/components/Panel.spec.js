@@ -8,7 +8,17 @@ Enzyme.configure({ adapter: new Adapter() });
 
 function setup() {
   const props = {
-    selected: {}
+    selected: {
+      requestId: '123',
+      request: {
+        headers: {
+          value: 'dontknow'
+        }
+      },
+      response: {
+        statusCode: 200
+      }
+    }
   };
 
   const component = shallow(<InfoPanel {...props} />);

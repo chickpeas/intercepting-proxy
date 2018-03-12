@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { AutoSizer, Column, Table } from 'react-virtualized';
+import { Column, Table } from 'react-virtualized';
 import 'react-virtualized/styles.css';
 import styles from './NetworkTable.scss';
 

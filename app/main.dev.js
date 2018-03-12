@@ -65,9 +65,10 @@ app.on('ready', async () => {
     height: 928
   });
 
-  mainWindow.loadURL(`file://${__dirname}/app.html`);
+  if (process.env.DEBUG === 'performance') mainWindow.loadURL(`file://${__dirname}/app.html?react_perf`);
+  else mainWindow.loadURL(`file://${__dirname}/app.html`);
 
-  // @TODO: Use 'ready-to-show' event
+  // @TODO: Use 'ready-to-show' event ?react_perf
   //        https://github.com/electron/electron/blob/master/docs/api/browser-window.md#using-ready-to-show-event
   mainWindow.webContents.on('did-finish-load', () => {
     if (!mainWindow) {

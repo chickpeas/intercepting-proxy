@@ -1,11 +1,12 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`InfoPanel component should render 1`] = `
+exports[`ActionBar component should render 1`] = `
 ShallowWrapper {
   "length": 1,
   Symbol(enzyme.__root__): [Circular],
-  Symbol(enzyme.__unrendered__): <InfoPanel
-    selected={Object {}}
+  Symbol(enzyme.__unrendered__): <ActionBar
+    filter={Object {}}
+    pendingRequest={Object {}}
   />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
@@ -17,16 +18,95 @@ ShallowWrapper {
   Symbol(enzyme.__node__): Object {
     "instance": null,
     "key": undefined,
-    "nodeType": "host",
+    "nodeType": "class",
     "props": Object {
       "children": Array [
-        <test-file-stub
-          className="closeIcon"
+        <label
+          className="labelBox"
+          htmlFor="intercept-switch"
+        >
+          <div
+            className="center"
+          >
+            Intercept
+          </div>
+          <Switch
+            activeBoxShadow="0px 0px 2px 3px #33bbff"
+            aria-label={null}
+            aria-labelledby={null}
+            boxShadow={null}
+            checked={undefined}
+            checkedIcon={
+              <svg
+                height="100%"
+                style={
+                  Object {
+                    "position": "absolute",
+                    "top": 0,
+                  }
+                }
+                viewBox="-2 -5 17 21"
+                width="100%"
+              >
+                <path
+                  d="M11.264 0L5.26 6.004 2.103 2.847 0 4.95l5.26 5.26 8.108-8.107L11.264 0"
+                  fill="#fff"
+                  fillRule="evenodd"
+                />
+              </svg>
+            }
+            className={null}
+            disabled={false}
+            handleDiameter={null}
+            height={28}
+            id={null}
+            offColor="#888"
+            offHandleColor="#fff"
+            onChange={[Function]}
+            onColor="#080"
+            onHandleColor="#fff"
+            uncheckedIcon={
+              <svg
+                height="100%"
+                style={
+                  Object {
+                    "position": "absolute",
+                    "top": 0,
+                  }
+                }
+                viewBox="-2 -5 14 20"
+                width="100%"
+              >
+                <path
+                  d="M9.9 2.12L7.78 0 4.95 2.828 2.12 0 0 2.12l2.83 2.83L0 7.776 2.123 9.9 4.95 7.07 7.78 9.9 9.9 7.776 7.072 4.95 9.9 2.12"
+                  fill="#fff"
+                  fillRule="evenodd"
+                />
+              </svg>
+            }
+            width={56}
+          />
+        </label>,
+        <WithStyles(Button)
+          className="forward"
+          color="primary"
+          disabled={true}
           onClick={undefined}
-        />,
-        Array [],
+          variant="raised"
+        >
+          Forward
+        </WithStyles(Button)>,
+        <WithStyles(Button)
+          className="forward"
+          color="secondary"
+          disabled={true}
+          onClick={undefined}
+          variant="raised"
+        >
+          Drop
+        </WithStyles(Button)>,
       ],
-      "className": "infoContainer",
+      "className": "barContainer",
     },
     "ref": null,
     "rendered": Array [
@@ -35,30 +115,277 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "host",
         "props": Object {
-          "className": "closeIcon",
-          "onClick": undefined,
+          "children": Array [
+            <div
+              className="center"
+            >
+              Intercept
+            </div>,
+            <Switch
+              activeBoxShadow="0px 0px 2px 3px #33bbff"
+              aria-label={null}
+              aria-labelledby={null}
+              boxShadow={null}
+              checked={undefined}
+              checkedIcon={
+                <svg
+                  height="100%"
+                  style={
+                    Object {
+                      "position": "absolute",
+                      "top": 0,
+                    }
+                  }
+                  viewBox="-2 -5 17 21"
+                  width="100%"
+                >
+                  <path
+                    d="M11.264 0L5.26 6.004 2.103 2.847 0 4.95l5.26 5.26 8.108-8.107L11.264 0"
+                    fill="#fff"
+                    fillRule="evenodd"
+                  />
+                </svg>
+              }
+              className={null}
+              disabled={false}
+              handleDiameter={null}
+              height={28}
+              id={null}
+              offColor="#888"
+              offHandleColor="#fff"
+              onChange={[Function]}
+              onColor="#080"
+              onHandleColor="#fff"
+              uncheckedIcon={
+                <svg
+                  height="100%"
+                  style={
+                    Object {
+                      "position": "absolute",
+                      "top": 0,
+                    }
+                  }
+                  viewBox="-2 -5 14 20"
+                  width="100%"
+                >
+                  <path
+                    d="M9.9 2.12L7.78 0 4.95 2.828 2.12 0 0 2.12l2.83 2.83L0 7.776 2.123 9.9 4.95 7.07 7.78 9.9 9.9 7.776 7.072 4.95 9.9 2.12"
+                    fill="#fff"
+                    fillRule="evenodd"
+                  />
+                </svg>
+              }
+              width={56}
+            />,
+          ],
+          "className": "labelBox",
+          "htmlFor": "intercept-switch",
         },
         "ref": null,
-        "rendered": null,
-        "type": "test-file-stub",
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "Intercept",
+              "className": "center",
+            },
+            "ref": null,
+            "rendered": "Intercept",
+            "type": "div",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "activeBoxShadow": "0px 0px 2px 3px #33bbff",
+              "aria-label": null,
+              "aria-labelledby": null,
+              "boxShadow": null,
+              "checked": undefined,
+              "checkedIcon": <svg
+                height="100%"
+                style={
+                  Object {
+                    "position": "absolute",
+                    "top": 0,
+                  }
+                }
+                viewBox="-2 -5 17 21"
+                width="100%"
+              >
+                <path
+                  d="M11.264 0L5.26 6.004 2.103 2.847 0 4.95l5.26 5.26 8.108-8.107L11.264 0"
+                  fill="#fff"
+                  fillRule="evenodd"
+                />
+              </svg>,
+              "className": null,
+              "disabled": false,
+              "handleDiameter": null,
+              "height": 28,
+              "id": null,
+              "offColor": "#888",
+              "offHandleColor": "#fff",
+              "onChange": [Function],
+              "onColor": "#080",
+              "onHandleColor": "#fff",
+              "uncheckedIcon": <svg
+                height="100%"
+                style={
+                  Object {
+                    "position": "absolute",
+                    "top": 0,
+                  }
+                }
+                viewBox="-2 -5 14 20"
+                width="100%"
+              >
+                <path
+                  d="M9.9 2.12L7.78 0 4.95 2.828 2.12 0 0 2.12l2.83 2.83L0 7.776 2.123 9.9 4.95 7.07 7.78 9.9 9.9 7.776 7.072 4.95 9.9 2.12"
+                  fill="#fff"
+                  fillRule="evenodd"
+                />
+              </svg>,
+              "width": 56,
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+        ],
+        "type": "label",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "children": "Forward",
+          "className": "forward",
+          "color": "primary",
+          "disabled": true,
+          "onClick": undefined,
+          "variant": "raised",
+        },
+        "ref": null,
+        "rendered": "Forward",
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "children": "Drop",
+          "className": "forward",
+          "color": "secondary",
+          "disabled": true,
+          "onClick": undefined,
+          "variant": "raised",
+        },
+        "ref": null,
+        "rendered": "Drop",
+        "type": [Function],
       },
     ],
-    "type": "div",
+    "type": [Function],
   },
   Symbol(enzyme.__nodes__): Array [
     Object {
       "instance": null,
       "key": undefined,
-      "nodeType": "host",
+      "nodeType": "class",
       "props": Object {
         "children": Array [
-          <test-file-stub
-            className="closeIcon"
+          <label
+            className="labelBox"
+            htmlFor="intercept-switch"
+          >
+            <div
+              className="center"
+            >
+              Intercept
+            </div>
+            <Switch
+              activeBoxShadow="0px 0px 2px 3px #33bbff"
+              aria-label={null}
+              aria-labelledby={null}
+              boxShadow={null}
+              checked={undefined}
+              checkedIcon={
+                <svg
+                  height="100%"
+                  style={
+                    Object {
+                      "position": "absolute",
+                      "top": 0,
+                    }
+                  }
+                  viewBox="-2 -5 17 21"
+                  width="100%"
+                >
+                  <path
+                    d="M11.264 0L5.26 6.004 2.103 2.847 0 4.95l5.26 5.26 8.108-8.107L11.264 0"
+                    fill="#fff"
+                    fillRule="evenodd"
+                  />
+                </svg>
+              }
+              className={null}
+              disabled={false}
+              handleDiameter={null}
+              height={28}
+              id={null}
+              offColor="#888"
+              offHandleColor="#fff"
+              onChange={[Function]}
+              onColor="#080"
+              onHandleColor="#fff"
+              uncheckedIcon={
+                <svg
+                  height="100%"
+                  style={
+                    Object {
+                      "position": "absolute",
+                      "top": 0,
+                    }
+                  }
+                  viewBox="-2 -5 14 20"
+                  width="100%"
+                >
+                  <path
+                    d="M9.9 2.12L7.78 0 4.95 2.828 2.12 0 0 2.12l2.83 2.83L0 7.776 2.123 9.9 4.95 7.07 7.78 9.9 9.9 7.776 7.072 4.95 9.9 2.12"
+                    fill="#fff"
+                    fillRule="evenodd"
+                  />
+                </svg>
+              }
+              width={56}
+            />
+          </label>,
+          <WithStyles(Button)
+            className="forward"
+            color="primary"
+            disabled={true}
             onClick={undefined}
-          />,
-          Array [],
+            variant="raised"
+          >
+            Forward
+          </WithStyles(Button)>,
+          <WithStyles(Button)
+            className="forward"
+            color="secondary"
+            disabled={true}
+            onClick={undefined}
+            variant="raised"
+          >
+            Drop
+          </WithStyles(Button)>,
         ],
-        "className": "infoContainer",
+        "className": "barContainer",
       },
       "ref": null,
       "rendered": Array [
@@ -67,15 +394,183 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "host",
           "props": Object {
-            "className": "closeIcon",
-            "onClick": undefined,
+            "children": Array [
+              <div
+                className="center"
+              >
+                Intercept
+              </div>,
+              <Switch
+                activeBoxShadow="0px 0px 2px 3px #33bbff"
+                aria-label={null}
+                aria-labelledby={null}
+                boxShadow={null}
+                checked={undefined}
+                checkedIcon={
+                  <svg
+                    height="100%"
+                    style={
+                      Object {
+                        "position": "absolute",
+                        "top": 0,
+                      }
+                    }
+                    viewBox="-2 -5 17 21"
+                    width="100%"
+                  >
+                    <path
+                      d="M11.264 0L5.26 6.004 2.103 2.847 0 4.95l5.26 5.26 8.108-8.107L11.264 0"
+                      fill="#fff"
+                      fillRule="evenodd"
+                    />
+                  </svg>
+                }
+                className={null}
+                disabled={false}
+                handleDiameter={null}
+                height={28}
+                id={null}
+                offColor="#888"
+                offHandleColor="#fff"
+                onChange={[Function]}
+                onColor="#080"
+                onHandleColor="#fff"
+                uncheckedIcon={
+                  <svg
+                    height="100%"
+                    style={
+                      Object {
+                        "position": "absolute",
+                        "top": 0,
+                      }
+                    }
+                    viewBox="-2 -5 14 20"
+                    width="100%"
+                  >
+                    <path
+                      d="M9.9 2.12L7.78 0 4.95 2.828 2.12 0 0 2.12l2.83 2.83L0 7.776 2.123 9.9 4.95 7.07 7.78 9.9 9.9 7.776 7.072 4.95 9.9 2.12"
+                      fill="#fff"
+                      fillRule="evenodd"
+                    />
+                  </svg>
+                }
+                width={56}
+              />,
+            ],
+            "className": "labelBox",
+            "htmlFor": "intercept-switch",
           },
           "ref": null,
-          "rendered": null,
-          "type": "test-file-stub",
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "Intercept",
+                "className": "center",
+              },
+              "ref": null,
+              "rendered": "Intercept",
+              "type": "div",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "activeBoxShadow": "0px 0px 2px 3px #33bbff",
+                "aria-label": null,
+                "aria-labelledby": null,
+                "boxShadow": null,
+                "checked": undefined,
+                "checkedIcon": <svg
+                  height="100%"
+                  style={
+                    Object {
+                      "position": "absolute",
+                      "top": 0,
+                    }
+                  }
+                  viewBox="-2 -5 17 21"
+                  width="100%"
+                >
+                  <path
+                    d="M11.264 0L5.26 6.004 2.103 2.847 0 4.95l5.26 5.26 8.108-8.107L11.264 0"
+                    fill="#fff"
+                    fillRule="evenodd"
+                  />
+                </svg>,
+                "className": null,
+                "disabled": false,
+                "handleDiameter": null,
+                "height": 28,
+                "id": null,
+                "offColor": "#888",
+                "offHandleColor": "#fff",
+                "onChange": [Function],
+                "onColor": "#080",
+                "onHandleColor": "#fff",
+                "uncheckedIcon": <svg
+                  height="100%"
+                  style={
+                    Object {
+                      "position": "absolute",
+                      "top": 0,
+                    }
+                  }
+                  viewBox="-2 -5 14 20"
+                  width="100%"
+                >
+                  <path
+                    d="M9.9 2.12L7.78 0 4.95 2.828 2.12 0 0 2.12l2.83 2.83L0 7.776 2.123 9.9 4.95 7.07 7.78 9.9 9.9 7.776 7.072 4.95 9.9 2.12"
+                    fill="#fff"
+                    fillRule="evenodd"
+                  />
+                </svg>,
+                "width": 56,
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+          ],
+          "type": "label",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "children": "Forward",
+            "className": "forward",
+            "color": "primary",
+            "disabled": true,
+            "onClick": undefined,
+            "variant": "raised",
+          },
+          "ref": null,
+          "rendered": "Forward",
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "children": "Drop",
+            "className": "forward",
+            "color": "secondary",
+            "disabled": true,
+            "onClick": undefined,
+            "variant": "raised",
+          },
+          "ref": null,
+          "rendered": "Drop",
+          "type": [Function],
         },
       ],
-      "type": "div",
+      "type": [Function],
     },
   ],
   Symbol(enzyme.__options__): Object {

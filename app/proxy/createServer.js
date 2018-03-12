@@ -102,7 +102,6 @@ export default function createServer({ dispatch, getState }) {
       });
       ctx.onRequestEnd((context, cb) => {
         const body = Buffer.concat(requestChunks);
-        console.log('requestBody', body);
         dispatch(addRequestBody(id, body));
         return cb();
       });
@@ -113,12 +112,11 @@ export default function createServer({ dispatch, getState }) {
       ctx.onResponseEnd((context, cb) => {
         const {
           proxyToClientResponse: { statusCode },
-          serverToProxyResponse: { headers }
+          serverToProxyResponse: { headers: responseHeaders }
         } = context;
         const body = Buffer.concat(responseChunks);
-        console.log('responseBody', body);
         ctx.proxyToClientResponse.write(body);
-        dispatch(addResponse(id, { statusCode, headers, body }));
+        dispatch(addResponse(id, { statusCode, headers: responseHeaders, body }));
         return cb(null);
       });
     });

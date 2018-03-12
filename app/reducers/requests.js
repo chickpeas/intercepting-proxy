@@ -1,5 +1,5 @@
 // @flow
-import { Map } from 'immutable';
+// import { Map } from 'immutable';
 import { ADD_REQUEST, ADD_REQUEST_BODY, ADD_PENDING_REQUEST, FORWARD_PENDING_REQUEST, DROP_PENDING_REQUEST } from '../actions/network';
 
 export type requestStateType = {

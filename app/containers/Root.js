@@ -4,8 +4,8 @@ import { Provider } from 'react-redux';
 import { ConnectedRouter } from 'react-router-redux';
 import Routes from '../routes';
 
-if (process.env.NODE_ENV !== 'production') {
-  const { whyDidYouUpdate } = require('why-did-you-update');
+if (process.env.DEBUG === 'performance') {
+  const { whyDidYouUpdate } = require('why-did-you-update'); // eslint-disable-line global-require
   whyDidYouUpdate(React);
 }
 

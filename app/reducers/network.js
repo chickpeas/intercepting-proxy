@@ -1,5 +1,5 @@
 // @flow
-import { Map, List, fromJS } from 'immutable';
+// import { Map, List, fromJS } from 'immutable';
 import { ADD_REQUEST, ADD_RESPONSE } from '../actions/network';
 
 export type networkStateType = {

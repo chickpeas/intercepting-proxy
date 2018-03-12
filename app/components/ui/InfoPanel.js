@@ -51,10 +51,9 @@ class InfoPanel extends Component<Props> {
     const { selected: { request, response = {} }, handleClose } = this.props;
     const requestComponent = this.nestedRender(request);
     const responseComponent = this.nestedRender(response);
-
     return (
       <div className={styles.infoContainer}>
-        <IconButton aria-label="close panel" onClick={handleClose}>
+        <IconButton className={styles.closeButton} aria-label="close panel" onClick={handleClose}>
           <CloseIcon />
         </IconButton>
         <ExpansionPanel>

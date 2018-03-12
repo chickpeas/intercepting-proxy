@@ -1,5 +1,5 @@
 // @flow
-import { Map, List } from 'immutable';
+// import { Map, List } from 'immutable';
 import { ADD_RESPONSE } from '../actions/network';
 
 export type responseStateType = {
