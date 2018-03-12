@@ -27,11 +27,40 @@ const columns = [{
   width: 80
 }];
 
+function filterLogTable({ filter, network: { byId, byHash }, requests, responses }) {
+  return byId.map((id, index) => {
+    const { requestId, responseId } = byHash[id];
+    if (responses[responseId] && responses[responseId].statusCode) {
+      const { statusCode, mime } = responses[responseId];
+      return {
+        id,
+        index,
+        responseId,
+        requestId,
+        url: requests[requestId].url,
+        method: requests[requestId].method,
+        statusCode,
+        mime
+      };
+    }
+    const statusCode = '';
+
+    return {
+      index,
+      id,
+      requestId,
+      url: requests[requestId].url,
+      method: requests[requestId].method,
+      statusCode
+    };
+  });
+}
+
 const mapStateToProps = (state) => ({
   network: state.network,
-  responses: state.responses,
-  requests: state.requests,
-  filter: state.filter
+  pendingRequest: state.requests.pendingRequest,
+  filter: state.filter,
+  log: filterLogTable(state)
 });
 
 const mapDispatchToProps = (dispatch) => ({

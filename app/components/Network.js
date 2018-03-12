@@ -15,11 +15,10 @@ type Props = {
   changeInterceptFilter: (boolean) => void,
   forwardRequest: () => void,
   dropRequest: () => void,
-  network: Object,
-  requests: Object,
-  responses: Object,
+  log: Array,
   filter: Object,
-  columns: Array
+  columns: Array,
+  pendingRequest: Array
 };
 
 class Network extends Component<Props> {
@@ -42,14 +41,14 @@ class Network extends Component<Props> {
   handleDropClick = () => {
     this.props.dropRequest();
   }
-  handlePanelClick = ({ requestId, responseId }) => {
-    const { requests, responses } = this.props;
+  handlePanelClick = ({ id }) => {
+    const { log } = this.props;
     this.setState({
       sidePanel: true,
       selected: {
-        requestId,
-        request: requests[requestId],
-        response: responses[responseId]
+        id,
+        request: log[id].request,
+        response: log[id].response
       }
     });
   }
@@ -64,36 +63,11 @@ class Network extends Component<Props> {
     } = this.state;
     const {
       filter,
-      requests: { pendingRequest },
+      pendingRequest,
       columns
     } = this.props;
 
-    const { network: { byId, byHash }, responses, requests } = this.props;
-    // TODO optimize this:
-    const log = byId.map((id, index) => {
-      const { requestId, responseId } = byHash[id];
-      if (responses[responseId] && responses[responseId].statusCode) {
-        const { statusCode, mime } = responses[responseId];
-        return {
-          index,
-          responseId,
-          requestId,
-          url: requests[requestId].url,
-          method: requests[requestId].method,
-          statusCode,
-          mime
-        };
-      }
-      const statusCode = '';
-
-      return {
-        index,
-        requestId,
-        url: requests[requestId].url,
-        method: requests[requestId].method,
-        statusCode
-      };
-    });
+    const { log } = this.props;
     const Info = (<InfoPanel handleClose={this.handleClosePanel} selected={selected} />);
     return (
       <div className={styles.networkMain}>

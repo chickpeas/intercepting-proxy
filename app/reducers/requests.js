@@ -58,3 +58,17 @@ export default function requests(state: Object = initialState, action: actionTyp
       return state;
   }
 }
+
+export const getBodyByRequestId = (
+  {
+    requests: request
+  },
+  requestId
+) => (request[requestId].body);
+
+export const getBodyByRequestIdAsString = (
+  {
+    requests: request
+  },
+  requestId
+) => (request[requestId].body.toString());
