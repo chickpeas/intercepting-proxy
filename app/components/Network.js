@@ -41,14 +41,13 @@ class Network extends Component<Props> {
   handleDropClick = () => {
     this.props.dropRequest();
   }
-  handlePanelClick = ({ id }) => {
-    const { log } = this.props;
+  handlePanelClick = ({ id, responseId, requestId }) => {
     this.setState({
       sidePanel: true,
       selected: {
         id,
-        request: log[id].request,
-        response: log[id].response
+        responseId,
+        requestId,
       }
     });
   }
@@ -79,7 +78,7 @@ class Network extends Component<Props> {
           pendingRequest={pendingRequest}
         />
         <div className={styles.networkContainer}>
-          <NetworkTable columns={columns} network={log} handleClick={this.handlePanelClick} />
+          <NetworkTable columns={columns} log={log} handleClick={this.handlePanelClick} />
           { sidePanel ? Info : null }
         </div>
       </div>

@@ -52,10 +52,18 @@ export default function filter(state: Object = initialState, action: actionType)
         ...state,
         statusCode: {
           ...state.statusCode,
-          ...action.payload
+          ...action.payload.value
         }
       };
     default:
       return state;
   }
 }
+
+export const getFilters = ({ filter: { intercept, mime = {}, statusCode = {} } }) => (
+  {
+    intercept,
+    mime,
+    statusCode
+  }
+);

@@ -25,14 +25,17 @@ function setup() {
   const props = {
     changeGlobalFilter: spy(),
     onRowClick: spy(),
-    network: {
-      byId: [],
-      byHash: []
-    },
-    requests: {},
-    responses: {}
+    log: [
+      {
+        index: 0,
+        id: '123',
+        requestId: '456',
+        url: 'asd.com',
+        methord: 'get',
+        statusCode: 200
+      }
+    ],
   };
-  console.log(initialState);
   const component = shallow(<Network {...props} />);
   return {
     component,

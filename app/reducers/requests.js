@@ -59,6 +59,13 @@ export default function requests(state: Object = initialState, action: actionTyp
   }
 }
 
+export const getRequestById = (
+  {
+    requests: request
+  },
+  requestId
+) => (request[requestId]);
+
 export const getBodyByRequestId = (
   {
     requests: request

@@ -8,15 +8,15 @@ import styles from './NetworkTable.scss';
 
 type Props = {
   handleClick: () => void,
-  network: Array,
+  log: Array,
   columns: Array
 };
 // TODO move to container
 
 class NetworkTable extends Component<Props> {
-  shouldComponentUpdate({ network: nextNetwork }) {
-    const { network } = this.props;
-    if (nextNetwork.length === network.length) return true;
+  shouldComponentUpdate({ log: nextLog }) {
+    const { log } = this.props;
+    if (nextLog.length === log.length) return true;
     return false;
   }
 
@@ -27,7 +27,7 @@ class NetworkTable extends Component<Props> {
 
   render() {
     const {
-      network,
+      log,
       columns
     } = this.props;
     const columnList = columns.map(({ header, accessor, width }) => (<Column
@@ -44,9 +44,9 @@ class NetworkTable extends Component<Props> {
         height={500}
         headerHeight={50}
         rowHeight={50}
-        rowCount={network.length}
+        rowCount={log.length}
         onRowClick={this.handleRowClick}
-        rowGetter={({ index }) => network[index]}
+        rowGetter={({ index }) => log[index]}
       >
         {columnList}
       </Table>

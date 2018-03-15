@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import ExpansionPanel, {
   ExpansionPanelSummary,
   ExpansionPanelDetails,
@@ -8,14 +9,17 @@ import IconButton from 'material-ui/IconButton';
 import ExpandMoreIcon from 'material-ui-icons/ExpandMore';
 import CloseIcon from 'material-ui-icons/Close';
 import styles from './InfoPanel.scss';
+import * as fromResponse from './../../reducers/responses';
+import * as fromRequest from './../../reducers/requests';
 
 type Props = {
-  selected: Object,
+  request: Object,
+  response: Object,
   handleClose: () => {}
 };
 
-
-class InfoPanel extends Component<Props> {
+// TODO separate dumb and smart component
+export class InfoPanel extends Component<Props> {
   props: Props;
 
   nestedRender(obj) {
@@ -48,7 +52,7 @@ class InfoPanel extends Component<Props> {
   }
 
   render() {
-    const { selected: { request, response = {} }, handleClose } = this.props;
+    const { handleClose, request, response } = this.props;
     const requestComponent = this.nestedRender(request);
     const responseComponent = this.nestedRender(response);
     return (
@@ -76,5 +80,9 @@ class InfoPanel extends Component<Props> {
     );
   }
 }
+const mapStateToProps = (state, { selected: { requestId, responseId } }) => ({
+  request: fromRequest.getRequestById(state, requestId),
+  response: fromResponse.getResponseById(state, responseId)
+});
 
-export default InfoPanel;
+export default connect(mapStateToProps)(InfoPanel);

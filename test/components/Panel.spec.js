@@ -2,22 +2,17 @@ import React from 'react';
 import Enzyme, { shallow } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
 
-import InfoPanel from '../../app/components/ui/InfoPanel';
+import { InfoPanel } from '../../app/components/ui/InfoPanel';
 
 Enzyme.configure({ adapter: new Adapter() });
 
 function setup() {
   const props = {
-    selected: {
-      requestId: '123',
-      request: {
-        headers: {
-          value: 'dontknow'
-        }
-      },
-      response: {
-        statusCode: 200
-      }
+    request: {
+      headers: 'value'
+    },
+    response: {
+      body: 'value'
     }
   };
 

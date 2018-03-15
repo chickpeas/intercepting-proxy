@@ -5,17 +5,14 @@ ShallowWrapper {
   "length": 1,
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <InfoPanel
-    selected={
+    request={
       Object {
-        "request": Object {
-          "headers": Object {
-            "value": "dontknow",
-          },
-        },
-        "requestId": "123",
-        "response": Object {
-          "statusCode": 200,
-        },
+        "headers": "value",
+      }
+    }
+    response={
+      Object {
+        "body": "value",
       }
     }
   />,
@@ -61,16 +58,7 @@ ShallowWrapper {
               <span
                 className="value"
               >
-                <span
-                  className="label"
-                >
-                  value
-                </span>
-                <span
-                  className="value"
-                >
-                  dontknow
-                </span>
+                value
               </span>
             </span>
           </WithStyles(ExpansionPanelDetails)>
@@ -87,17 +75,17 @@ ShallowWrapper {
           </WithStyles(ExpansionPanelSummary)>
           <WithStyles(ExpansionPanelDetails)>
             <span
-              className="statusCode"
+              className="body"
             >
               <span
                 className="label"
               >
-                statusCode
+                body
               </span>
               <span
                 className="value"
               >
-                200
+                value
               </span>
             </span>
           </WithStyles(ExpansionPanelDetails)>
@@ -156,16 +144,7 @@ ShallowWrapper {
                 <span
                   className="value"
                 >
-                  <span
-                    className="label"
-                  >
-                    value
-                  </span>
-                  <span
-                    className="value"
-                  >
-                    dontknow
-                  </span>
+                  value
                 </span>
               </span>
             </WithStyles(ExpansionPanelDetails)>,
@@ -217,16 +196,7 @@ ShallowWrapper {
                   <span
                     className="value"
                   >
-                    <span
-                      className="label"
-                    >
-                      value
-                    </span>
-                    <span
-                      className="value"
-                    >
-                      dontknow
-                    </span>
+                    value
                   </span>
                 </span>,
               ],
@@ -244,22 +214,11 @@ ShallowWrapper {
                     >
                       headers
                     </span>,
-                    Array [
-                      <span
-                        className="value"
-                      >
-                        <span
-                          className="label"
-                        >
-                          value
-                        </span>
-                        <span
-                          className="value"
-                        >
-                          dontknow
-                        </span>
-                      </span>,
-                    ],
+                    <span
+                      className="value"
+                    >
+                      value
+                    </span>,
                   ],
                   "className": "headers",
                 },
@@ -279,50 +238,14 @@ ShallowWrapper {
                   },
                   Object {
                     "instance": null,
-                    "key": "value",
+                    "key": undefined,
                     "nodeType": "host",
                     "props": Object {
-                      "children": Array [
-                        <span
-                          className="label"
-                        >
-                          value
-                        </span>,
-                        <span
-                          className="value"
-                        >
-                          dontknow
-                        </span>,
-                      ],
+                      "children": "value",
                       "className": "value",
                     },
                     "ref": null,
-                    "rendered": Array [
-                      Object {
-                        "instance": null,
-                        "key": undefined,
-                        "nodeType": "host",
-                        "props": Object {
-                          "children": "value",
-                          "className": "label",
-                        },
-                        "ref": null,
-                        "rendered": "value",
-                        "type": "span",
-                      },
-                      Object {
-                        "instance": null,
-                        "key": undefined,
-                        "nodeType": "host",
-                        "props": Object {
-                          "children": "dontknow",
-                          "className": "value",
-                        },
-                        "ref": null,
-                        "rendered": "dontknow",
-                        "type": "span",
-                      },
-                    ],
+                    "rendered": "value",
                     "type": "span",
                   },
                 ],
@@ -351,17 +274,17 @@ ShallowWrapper {
             </WithStyles(ExpansionPanelSummary)>,
             <WithStyles(ExpansionPanelDetails)>
               <span
-                className="statusCode"
+                className="body"
               >
                 <span
                   className="label"
                 >
-                  statusCode
+                  body
                 </span>
                 <span
                   className="value"
                 >
-                  200
+                  value
                 </span>
               </span>
             </WithStyles(ExpansionPanelDetails)>,
@@ -403,17 +326,17 @@ ShallowWrapper {
             "props": Object {
               "children": Array [
                 <span
-                  className="statusCode"
+                  className="body"
                 >
                   <span
                     className="label"
                   >
-                    statusCode
+                    body
                   </span>
                   <span
                     className="value"
                   >
-                    200
+                    value
                   </span>
                 </span>,
               ],
@@ -422,22 +345,22 @@ ShallowWrapper {
             "rendered": Array [
               Object {
                 "instance": null,
-                "key": "statusCode",
+                "key": "body",
                 "nodeType": "host",
                 "props": Object {
                   "children": Array [
                     <span
                       className="label"
                     >
-                      statusCode
+                      body
                     </span>,
                     <span
                       className="value"
                     >
-                      200
+                      value
                     </span>,
                   ],
-                  "className": "statusCode",
+                  "className": "body",
                 },
                 "ref": null,
                 "rendered": Array [
@@ -446,11 +369,11 @@ ShallowWrapper {
                     "key": undefined,
                     "nodeType": "host",
                     "props": Object {
-                      "children": "statusCode",
+                      "children": "body",
                       "className": "label",
                     },
                     "ref": null,
-                    "rendered": "statusCode",
+                    "rendered": "body",
                     "type": "span",
                   },
                   Object {
@@ -458,11 +381,11 @@ ShallowWrapper {
                     "key": undefined,
                     "nodeType": "host",
                     "props": Object {
-                      "children": 200,
+                      "children": "value",
                       "className": "value",
                     },
                     "ref": null,
-                    "rendered": 200,
+                    "rendered": "value",
                     "type": "span",
                   },
                 ],
@@ -513,16 +436,7 @@ ShallowWrapper {
                 <span
                   className="value"
                 >
-                  <span
-                    className="label"
-                  >
-                    value
-                  </span>
-                  <span
-                    className="value"
-                  >
-                    dontknow
-                  </span>
+                  value
                 </span>
               </span>
             </WithStyles(ExpansionPanelDetails)>
@@ -539,17 +453,17 @@ ShallowWrapper {
             </WithStyles(ExpansionPanelSummary)>
             <WithStyles(ExpansionPanelDetails)>
               <span
-                className="statusCode"
+                className="body"
               >
                 <span
                   className="label"
                 >
-                  statusCode
+                  body
                 </span>
                 <span
                   className="value"
                 >
-                  200
+                  value
                 </span>
               </span>
             </WithStyles(ExpansionPanelDetails)>
@@ -608,16 +522,7 @@ ShallowWrapper {
                   <span
                     className="value"
                   >
-                    <span
-                      className="label"
-                    >
-                      value
-                    </span>
-                    <span
-                      className="value"
-                    >
-                      dontknow
-                    </span>
+                    value
                   </span>
                 </span>
               </WithStyles(ExpansionPanelDetails)>,
@@ -669,16 +574,7 @@ ShallowWrapper {
                     <span
                       className="value"
                     >
-                      <span
-                        className="label"
-                      >
-                        value
-                      </span>
-                      <span
-                        className="value"
-                      >
-                        dontknow
-                      </span>
+                      value
                     </span>
                   </span>,
                 ],
@@ -696,22 +592,11 @@ ShallowWrapper {
                       >
                         headers
                       </span>,
-                      Array [
-                        <span
-                          className="value"
-                        >
-                          <span
-                            className="label"
-                          >
-                            value
-                          </span>
-                          <span
-                            className="value"
-                          >
-                            dontknow
-                          </span>
-                        </span>,
-                      ],
+                      <span
+                        className="value"
+                      >
+                        value
+                      </span>,
                     ],
                     "className": "headers",
                   },
@@ -731,50 +616,14 @@ ShallowWrapper {
                     },
                     Object {
                       "instance": null,
-                      "key": "value",
+                      "key": undefined,
                       "nodeType": "host",
                       "props": Object {
-                        "children": Array [
-                          <span
-                            className="label"
-                          >
-                            value
-                          </span>,
-                          <span
-                            className="value"
-                          >
-                            dontknow
-                          </span>,
-                        ],
+                        "children": "value",
                         "className": "value",
                       },
                       "ref": null,
-                      "rendered": Array [
-                        Object {
-                          "instance": null,
-                          "key": undefined,
-                          "nodeType": "host",
-                          "props": Object {
-                            "children": "value",
-                            "className": "label",
-                          },
-                          "ref": null,
-                          "rendered": "value",
-                          "type": "span",
-                        },
-                        Object {
-                          "instance": null,
-                          "key": undefined,
-                          "nodeType": "host",
-                          "props": Object {
-                            "children": "dontknow",
-                            "className": "value",
-                          },
-                          "ref": null,
-                          "rendered": "dontknow",
-                          "type": "span",
-                        },
-                      ],
+                      "rendered": "value",
                       "type": "span",
                     },
                   ],
@@ -803,17 +652,17 @@ ShallowWrapper {
               </WithStyles(ExpansionPanelSummary)>,
               <WithStyles(ExpansionPanelDetails)>
                 <span
-                  className="statusCode"
+                  className="body"
                 >
                   <span
                     className="label"
                   >
-                    statusCode
+                    body
                   </span>
                   <span
                     className="value"
                   >
-                    200
+                    value
                   </span>
                 </span>
               </WithStyles(ExpansionPanelDetails)>,
@@ -855,17 +704,17 @@ ShallowWrapper {
               "props": Object {
                 "children": Array [
                   <span
-                    className="statusCode"
+                    className="body"
                   >
                     <span
                       className="label"
                     >
-                      statusCode
+                      body
                     </span>
                     <span
                       className="value"
                     >
-                      200
+                      value
                     </span>
                   </span>,
                 ],
@@ -874,22 +723,22 @@ ShallowWrapper {
               "rendered": Array [
                 Object {
                   "instance": null,
-                  "key": "statusCode",
+                  "key": "body",
                   "nodeType": "host",
                   "props": Object {
                     "children": Array [
                       <span
                         className="label"
                       >
-                        statusCode
+                        body
                       </span>,
                       <span
                         className="value"
                       >
-                        200
+                        value
                       </span>,
                     ],
-                    "className": "statusCode",
+                    "className": "body",
                   },
                   "ref": null,
                   "rendered": Array [
@@ -898,11 +747,11 @@ ShallowWrapper {
                       "key": undefined,
                       "nodeType": "host",
                       "props": Object {
-                        "children": "statusCode",
+                        "children": "body",
                         "className": "label",
                       },
                       "ref": null,
-                      "rendered": "statusCode",
+                      "rendered": "body",
                       "type": "span",
                     },
                     Object {
@@ -910,11 +759,11 @@ ShallowWrapper {
                       "key": undefined,
                       "nodeType": "host",
                       "props": Object {
-                        "children": 200,
+                        "children": "value",
                         "className": "value",
                       },
                       "ref": null,
-                      "rendered": 200,
+                      "rendered": "value",
                       "type": "span",
                     },
                   ],

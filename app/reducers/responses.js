@@ -35,6 +35,13 @@ export default function responses(state: Object = initialState, action: actionTy
   }
 }
 
+export const getResponseById = (
+  {
+    responses: reponse
+  },
+  responseId
+) => (reponse[responseId]);
+
 export const getBodyByResponseId = (
   {
     responses: response

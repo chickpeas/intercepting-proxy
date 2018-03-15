@@ -59,15 +59,36 @@ export default function network(state: Object = initialState, action: actionType
   }
 }
 
+export const getNetworkLog = ({ network: { byId, byHash }, requests, responses }) => (
+  byId.map((id, index) => {
+    const { requestId, responseId = '' } = byHash[id];
+    const { [responseId]: reponse = {} } = responses;
+    const { statusCode = '', mime = '' } = reponse;
+    return {
+      id,
+      index,
+      responseId,
+      requestId,
+      url: requests[requestId].url,
+      method: requests[requestId].method,
+      statusCode,
+      mime
+    };
+  })
+);
 
 export const getResponseIdById = ({ network: { byHash } }, id) => (byHash[id].requestId);
 
 export const getResponseById = ({ network: { byId }, responses }, id) => (
-  responses[byId[id].requestId]
+  responses[byId[id].reponseId]
 );
 
-export const getRequestIdById = ({ network: { byId } }, id) => (byId[id].requestId);
+export const getRequestIdById = ({ network: { byHash } }, id) => (byHash[id].responseId);
 
-export const getRequestById = ({ network: { byId }, requests }, id) => (
-  requests[byId[id].requestId]
+export const getRequestById =
+  ({
+    network: { byId },
+    requests
+  }, id) => (
+    requests[byId[id].requestId]
 );

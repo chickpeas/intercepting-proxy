@@ -1,6 +1,6 @@
 // @flow
 import { createId } from './../utils/index';
-import * as fromResponses from './../reducers/network';
+import * as fromNetwork from './../reducers/network';
 
 export const ADD_REQUEST = 'ADD_REQUEST';
 export const ADD_REQUEST_BODY = 'ADD_REQUEST_BODY';
@@ -30,7 +30,7 @@ export function addRequest(id, {
 }
 export function addRequestBody(id, body) {
   return (dispatch, getState) => {
-    const requestId = fromResponses.getResponseIdById(getState(), id);
+    const requestId = fromNetwork.getResponseIdById(getState(), id);
     return {
       type: ADD_REQUEST_BODY,
       payload: {

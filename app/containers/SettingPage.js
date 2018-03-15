@@ -4,8 +4,9 @@ import Setting from '../components/Setting';
 import * as FilterActions from '../actions/filter';
 
 // TODO automate this from state
-const setCheckbox = ({ mime, statusCode }) => (
-  {
+const setCheckbox = ({ mime, statusCode }) => {
+  console.log(mime, statusCode);
+  return {
     mime: {
       label: 'Filter by MIME type',
       checks: [
@@ -64,7 +65,7 @@ const setCheckbox = ({ mime, statusCode }) => (
       ]
     }
   }
-);
+};
 
 const mapStateToProps = (state) => (
   {
